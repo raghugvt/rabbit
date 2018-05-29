@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.3 r1808647">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="RabbitMQ Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">4</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1515145827000</longProp>
+        <longProp name="ThreadGroup.end_time">1515145827000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.zeroclue.jmeter.protocol.amqp.AMQPPublisher guiclass="com.zeroclue.jmeter.protocol.amqp.gui.AMQPPublisherGui" testclass="com.zeroclue.jmeter.protocol.amqp.AMQPPublisher" testname="AMQP Publisher" enabled="false">
+          <stringProp name="AMQPSampler.Exchange">jmeterExchange</stringProp>
+          <boolProp name="AMQPSampler.ExchangeDurable">false</boolProp>
+          <boolProp name="AMQPSampler.ExchangeAutoDelete">false</boolProp>
+          <boolProp name="AMQPSampler.ExchangeRedeclare">false</boolProp>
+          <stringProp name="AMQPSampler.Queue">jmeterQueue</stringProp>
+          <stringProp name="AMQPSampler.RoutingKey"></stringProp>
+          <stringProp name="AMQPSampler.VirtualHost">/</stringProp>
+          <stringProp name="AMQPSampler.MessageTTL"></stringProp>
+          <stringProp name="AMQPSampler.MessageExpires"></stringProp>
+          <stringProp name="AMQPSampler.ExchangeType">direct</stringProp>
+          <stringProp name="AMQPSampler.QueueDurable">false</stringProp>
+          <stringProp name="AMQPSampler.QueueExclusive">false</stringProp>
+          <stringProp name="AMQPSampler.QueueAutoDelete">false</stringProp>
+          <boolProp name="AMQPSampler.Redeclare">false</boolProp>
+          <stringProp name="AMQPSampler.Timeout">1000</stringProp>
+          <stringProp name="AMQPSampler.Iterations">1</stringProp>
+          <stringProp name="AMQPSampler.Host">10.207.85.11</stringProp>
+          <stringProp name="AMQPSampler.Port">5672</stringProp>
+          <stringProp name="AMQPSampler.Username">guest</stringProp>
+          <stringProp name="AMQPSampler.Password">guest</stringProp>
+          <stringProp name="AMQPSampler.SSL">false</stringProp>
+          <boolProp name="AMQPPublisher.Persistent">false</boolProp>
+          <boolProp name="AMQPPublisher.UseTx">false</boolProp>
+          <stringProp name="AMQPPublisher.MessageRoutingKey"></stringProp>
+          <stringProp name="AMQPPublisher.Message">{&quot;username&quot;: &quot;Raghavendra&quot;, &quot;Location&quot;: &quot;Bangalore&quot;, &quot;date&quot;: ${__time(dd/MM/yyyy,)}, &quot;time&quot;: ${__time(hh:mm a,)}}</stringProp>
+          <stringProp name="AMQPPublisher.MessageType"></stringProp>
+          <stringProp name="AMQPPublisher.ReplyToQueue"></stringProp>
+          <stringProp name="AMQPPublisher.CorrelationId"></stringProp>
+          <stringProp name="AMQPPublisher.ContentType"></stringProp>
+          <stringProp name="AMQPPublisher.MessageId"></stringProp>
+          <elementProp name="AMQPPublisher.Headers" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </com.zeroclue.jmeter.protocol.amqp.AMQPPublisher>
+        <hashTree/>
+        <com.zeroclue.jmeter.protocol.amqp.AMQPConsumer guiclass="com.zeroclue.jmeter.protocol.amqp.gui.AMQPConsumerGui" testclass="com.zeroclue.jmeter.protocol.amqp.AMQPConsumer" testname="AMQP Consumer" enabled="false">
+          <stringProp name="AMQPSampler.Exchange">jmeterExchange</stringProp>
+          <boolProp name="AMQPSampler.ExchangeDurable">false</boolProp>
+          <boolProp name="AMQPSampler.ExchangeAutoDelete">false</boolProp>
+          <boolProp name="AMQPSampler.ExchangeRedeclare">false</boolProp>
+          <stringProp name="AMQPSampler.Queue">jmeterQueue</stringProp>
+          <stringProp name="AMQPSampler.RoutingKey"></stringProp>
+          <stringProp name="AMQPSampler.VirtualHost">/</stringProp>
+          <stringProp name="AMQPSampler.MessageTTL"></stringProp>
+          <stringProp name="AMQPSampler.MessageExpires"></stringProp>
+          <stringProp name="AMQPSampler.ExchangeType">direct</stringProp>
+          <stringProp name="AMQPSampler.QueueDurable">false</stringProp>
+          <stringProp name="AMQPSampler.QueueExclusive">false</stringProp>
+          <stringProp name="AMQPSampler.QueueAutoDelete">false</stringProp>
+          <boolProp name="AMQPSampler.Redeclare">false</boolProp>
+          <stringProp name="AMQPSampler.Timeout">1000</stringProp>
+          <stringProp name="AMQPSampler.Iterations">1</stringProp>
+          <stringProp name="AMQPSampler.Host">10.207.85.11</stringProp>
+          <stringProp name="AMQPSampler.Port">5672</stringProp>
+          <stringProp name="AMQPSampler.Username">guest</stringProp>
+          <stringProp name="AMQPSampler.Password">guest</stringProp>
+          <stringProp name="AMQPSampler.SSL">false</stringProp>
+          <boolProp name="AMQPConsumer.ReadResponse">true</boolProp>
+          <stringProp name="AMQPConsumer.PrefetchCount">0</stringProp>
+          <stringProp name="AMQPConsumer.ReceiveTimeout"></stringProp>
+          <stringProp name="AMQPConsumer.PurgeQueue">false</stringProp>
+          <stringProp name="AMQPConsumer.AutoAck">true</stringProp>
+          <boolProp name="AMQPConsumer.UseTx">false</boolProp>
+        </com.zeroclue.jmeter.protocol.amqp.AMQPConsumer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="RabbitMQ Publisher - Cluster" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <longProp name="ThreadGroup.start_time">1516093499000</longProp>
+        <longProp name="ThreadGroup.end_time">1516093499000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.zeroclue.jmeter.protocol.amqp.AMQPPublisher guiclass="com.zeroclue.jmeter.protocol.amqp.gui.AMQPPublisherGui" testclass="com.zeroclue.jmeter.protocol.amqp.AMQPPublisher" testname="AMQP Publisher" enabled="true">
+          <stringProp name="AMQPSampler.Exchange">test_exchange</stringProp>
+          <boolProp name="AMQPSampler.ExchangeDurable">true</boolProp>
+          <boolProp name="AMQPSampler.ExchangeAutoDelete">false</boolProp>
+          <boolProp name="AMQPSampler.ExchangeRedeclare">false</boolProp>
+          <stringProp name="AMQPSampler.Queue">ha_test_queue_on_node1</stringProp>
+          <stringProp name="AMQPSampler.RoutingKey">1111</stringProp>
+          <stringProp name="AMQPSampler.VirtualHost">/</stringProp>
+          <stringProp name="AMQPSampler.MessageTTL"></stringProp>
+          <stringProp name="AMQPSampler.MessageExpires"></stringProp>
+          <stringProp name="AMQPSampler.ExchangeType">direct</stringProp>
+          <stringProp name="AMQPSampler.QueueDurable">true</stringProp>
+          <stringProp name="AMQPSampler.QueueExclusive">false</stringProp>
+          <stringProp name="AMQPSampler.QueueAutoDelete">false</stringProp>
+          <boolProp name="AMQPSampler.Redeclare">false</boolProp>
+          <stringProp name="AMQPSampler.Timeout">1000</stringProp>
+          <stringProp name="AMQPSampler.Iterations">1</stringProp>
+          <stringProp name="AMQPSampler.Host">10.118.252.121</stringProp>
+          <stringProp name="AMQPSampler.Port">5672</stringProp>
+          <stringProp name="AMQPSampler.Username">guest</stringProp>
+          <stringProp name="AMQPSampler.Password">guest</stringProp>
+          <stringProp name="AMQPSampler.SSL">false</stringProp>
+          <boolProp name="AMQPPublisher.Persistent">true</boolProp>
+          <boolProp name="AMQPPublisher.UseTx">false</boolProp>
+          <stringProp name="AMQPPublisher.MessageRoutingKey">1111</stringProp>
+          <stringProp name="AMQPPublisher.Message">{&quot;username&quot;: &quot;Raghavendra&quot;, &quot;Location&quot;: &quot;Bangalore&quot;, &quot;date&quot;: ${__time(dd/MM/yyyy,)}, &quot;time&quot;: ${__time(hh:mm a,)}}</stringProp>
+          <stringProp name="AMQPPublisher.MessageType"></stringProp>
+          <stringProp name="AMQPPublisher.ReplyToQueue"></stringProp>
+          <stringProp name="AMQPPublisher.CorrelationId"></stringProp>
+          <stringProp name="AMQPPublisher.ContentType"></stringProp>
+          <stringProp name="AMQPPublisher.MessageId"></stringProp>
+          <elementProp name="AMQPPublisher.Headers" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </com.zeroclue.jmeter.protocol.amqp.AMQPPublisher>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="RabbitMQ Consumer - Cluster" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <longProp name="ThreadGroup.start_time">1516094674000</longProp>
+        <longProp name="ThreadGroup.end_time">1516094674000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.zeroclue.jmeter.protocol.amqp.AMQPConsumer guiclass="com.zeroclue.jmeter.protocol.amqp.gui.AMQPConsumerGui" testclass="com.zeroclue.jmeter.protocol.amqp.AMQPConsumer" testname="AMQP Consumer" enabled="true">
+          <stringProp name="AMQPSampler.Exchange">test_exchange</stringProp>
+          <boolProp name="AMQPSampler.ExchangeDurable">true</boolProp>
+          <boolProp name="AMQPSampler.ExchangeAutoDelete">false</boolProp>
+          <boolProp name="AMQPSampler.ExchangeRedeclare">false</boolProp>
+          <stringProp name="AMQPSampler.Queue">ha_test_queue_on_node1</stringProp>
+          <stringProp name="AMQPSampler.RoutingKey">1111</stringProp>
+          <stringProp name="AMQPSampler.VirtualHost">/</stringProp>
+          <stringProp name="AMQPSampler.MessageTTL"></stringProp>
+          <stringProp name="AMQPSampler.MessageExpires"></stringProp>
+          <stringProp name="AMQPSampler.ExchangeType">direct</stringProp>
+          <stringProp name="AMQPSampler.QueueDurable">true</stringProp>
+          <stringProp name="AMQPSampler.QueueExclusive">false</stringProp>
+          <stringProp name="AMQPSampler.QueueAutoDelete">false</stringProp>
+          <boolProp name="AMQPSampler.Redeclare">false</boolProp>
+          <stringProp name="AMQPSampler.Timeout">1000</stringProp>
+          <stringProp name="AMQPSampler.Iterations">1</stringProp>
+          <stringProp name="AMQPSampler.Host">10.118.252.121</stringProp>
+          <stringProp name="AMQPSampler.Port">5672</stringProp>
+          <stringProp name="AMQPSampler.Username">guest</stringProp>
+          <stringProp name="AMQPSampler.Password">guest</stringProp>
+          <stringProp name="AMQPSampler.SSL">false</stringProp>
+          <boolProp name="AMQPConsumer.ReadResponse">true</boolProp>
+          <stringProp name="AMQPConsumer.PrefetchCount">0</stringProp>
+          <stringProp name="AMQPConsumer.ReceiveTimeout"></stringProp>
+          <stringProp name="AMQPConsumer.PurgeQueue">false</stringProp>
+          <stringProp name="AMQPConsumer.AutoAck">true</stringProp>
+          <boolProp name="AMQPConsumer.UseTx">false</boolProp>
+        </com.zeroclue.jmeter.protocol.amqp.AMQPConsumer>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>
